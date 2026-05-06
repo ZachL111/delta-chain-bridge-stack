@@ -1,0 +1,73 @@
+{
+  "repo": "delta-chain-bridge-stack",
+  "language": "C",
+  "category": "Blockchain tooling",
+  "goal": "Implement a C blockchain tooling project for bridge diagnostic reporting, using negative fixtures and human-readable error snapshots.",
+  "review_model": {
+    "terms": [
+      "event finality",
+      "nonce pressure",
+      "settlement risk",
+      "proof depth"
+    ],
+    "lanes": [
+      "ship",
+      "watch",
+      "hold"
+    ],
+    "score": "signal * 2 + slack + confidence - drag * 3",
+    "purpose": "surface the domain-specific cases that need the most careful review"
+  },
+  "cases": [
+    {
+      "name": "baseline",
+      "focus": "event finality",
+      "signal": 74,
+      "slack": 30,
+      "drag": 18,
+      "confidence": 85,
+      "score": 209,
+      "lane": "ship"
+    },
+    {
+      "name": "stress",
+      "focus": "nonce pressure",
+      "signal": 52,
+      "slack": 25,
+      "drag": 13,
+      "confidence": 80,
+      "score": 170,
+      "lane": "ship"
+    },
+    {
+      "name": "edge",
+      "focus": "settlement risk",
+      "signal": 83,
+      "slack": 53,
+      "drag": 29,
+      "confidence": 91,
+      "score": 223,
+      "lane": "ship"
+    },
+    {
+      "name": "recovery",
+      "focus": "proof depth",
+      "signal": 69,
+      "slack": 33,
+      "drag": 11,
+      "confidence": 69,
+      "score": 207,
+      "lane": "ship"
+    },
+    {
+      "name": "stale",
+      "focus": "event finality",
+      "signal": 85,
+      "slack": 36,
+      "drag": 13,
+      "confidence": 51,
+      "score": 218,
+      "lane": "ship"
+    }
+  ]
+}
